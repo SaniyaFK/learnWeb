@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/jpg" href="images/pil.jpg">
+  <title>Document</title>
+</head>
+<style>
+  /* body{
+    background-image: url(images/pil.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;    
+  } */
+  body{
+    background:linear-gradient(135deg,rgb(253, 255, 155), rgb(244, 77, 6));
+    justify-content: center;
+    height: 100vh;
+  }
+  #myform{
+    text-align: center;
+    justify-content: center;
+    border: 1px solid;
+  }
+  h3{
+    color: white;
+    background-color: black;
+  }
+  h3::before{
+    content: "✔️";
+  }
+</style>
+<body>
+  <h3>Form Fill</h3>
+  <form action="google.com" method="post" enctype="multipart/form-data" id="myform">
+  
+    Name:
+    <input type="text" id="name" placeholder="Saniya Faiyaz Kabadi" required maxlength="30"><br><br>
+
+    Email id:
+    <input type="email" id="email" placeholder="ABC@gmai.com" required><br><br>
+
+    Mobile no.:
+    <input type="tel" id="phone" placeholder="91 1234567890" pattern="[0-9]{2}-[0-9]{10}" required><br><br>
+
+    Select Gender: <br>
+    <input type="radio" value="male" name="gender"> Male
+    <input type="radio" value="female" name="gender"> Female
+    <input type="radio" value="other" name="gender"> Other
+    <br><br>
+
+    D.O.B:
+    <input type="date" id="bday"><br><br>
+
+    Course applied for:
+    <select id="courses">
+      <option value="btech">B.Tech</option>
+      <option value="bsc">B.Sc</option>
+      <option value="bcom">B.Com</option>
+      <option value="ba">B.A</option>
+    </select><br><br>
+
+    <label for="address">Address:</label><br>
+    <textarea id="address" rows="3" cols="30"></textarea><br><br>
+
+    Upload your photo:
+    <input type="file" id="photo" accept="image/jpeg, image/jpg, image/png"><br><br>
+
+    Check our terms and conditions before you submit:<br>
+    <input type="checkbox" class="TnC" required>
+    I have willingly accepted to fill this form<br>
+    <input type="checkbox" class="TnC">
+    I have trust in this authority.Any mishap during this form filling and further procedures will not be accounted to the organization<br><br>
+
+    <input type="reset" id="reset">
+    <input type="submit" id="submit">
+  </form>
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/jpg" href="images/pil.jpg">
+  <title>Form Validation</title>
+</head>
+<style>
+  body{
+    background-color: rgb(168, 168, 248);
+  }
+
+  h3{
+    border: inset;
+    padding: 10px;
+    background-color: rgb(100, 100, 225);
+    box-shadow: 0 2px 5px rgb(63, 62, 62);
+    width: 100%;
+  }
+  h3::before{
+    content: "📄";
+  }
+  #form{
+    display: block;
+    padding: 10px;
+    background-color: rgb(138, 171, 171);
+  }
+
+  input{
+    border: 1px solid rgb(133, 131, 131);
+    outline: none;
+    padding: 10px;
+  }
+  input:focus{
+    color: rgb(86, 86, 86);
+    box-shadow: 0 2px 5px rgb(76, 87, 90);
+    background: linear-gradient(135deg, rgb(255, 242, 176), rgb(227, 249, 119));
+  }
+
+  #reset, #submit{
+    background-color: rgb(67, 61, 248);
+    display: inline;
+    justify-content: center;
+    margin-left: 10px;
+    font-size: 15px;
+    border: 1px solid rgb(198, 132, 9);
+    color: rgb(190, 247, 224);
+  }
+
+  #reset:hover{
+    background-color: rgb(254, 163, 78);
+    box-shadow: 0 2px 10px rgb(145, 97, 64);
+  }
+
+  #submit{
+    height: 50px;
+    width: 100px;
+    padding: 10px;
+  }
+  #submit:hover{
+    background-color: rgb(254, 163, 78);
+    box-shadow: 0 2px 10px rgb(145, 97, 64);  
+  }
+
+  #reset{
+    margin-left: 40px;
+  }
+
+</style>
+<body>
+  <h3>Form Fill</h3>
+  <form action="google.com" method="post" enctype="multipart/form-data" id="myform" onsubmit="return validateForm()">
+  
+    Name:
+    <input type="text" id="name" placeholder="Saniya Faiyaz Kabadi"  maxlength="30"><br><br>
+
+    Email id:
+    <input type="email" id="email" placeholder="ABC@gmai.com" ><br><br>
+
+    Mobile no.:
+    <input type="tel" id="phone" placeholder="91 1234567890" pattern="[0-9]{2} [0-9]{10}" ><br><br>
+
+    Select Gender: <br>
+    <input type="radio" value="male" name="gender"> Male
+    <input type="radio" value="female" name="gender"> Female
+    <input type="radio" value="other" name="gender"> Other
+    <br><br>
+
+    D.O.B:
+    <input type="date" id="bday"><br><br>
+
+    Course applied for:
+    <select id="courses">
+      <option value="btech">B.Tech</option>
+      <option value="bsc">B.Sc</option>
+      <option value="bcom">B.Com</option>
+      <option value="ba">B.A</option>
+    </select><br><br>
+
+    <label for="address">Address:</label><br>
+    <textarea id="address" rows="3" cols="30"></textarea><br><br>
+
+    Upload your photo:
+    <input type="file" id="photo" accept="image/jpeg, image/jpg, image/png"><br><br>
+
+    Check our terms and conditions before you submit:<br>
+    <input type="checkbox" class="TnC" >
+    I have willingly accepted to fill this form<br>
+    <input type="checkbox" class="TnC">
+    I have trust in this authority.Any mishap during this form filling and further procedures will not be accounted to the organization<br><br>
+
+    <input type="reset" id="reset">
+    <input type="submit" id="submit">
+  </form>
+
+  <script>
+    function validateForm(){
+      let name = document.getElementById("name").value.trim();
+      let email = document.getElementById("email").value;
+      let phone = document.getElementById("phone").value;
+      let address = document.getElementById("address").value;
+
+      if(name == ""){
+        alert("Forms Fields(name) are missing. Plase enter valid details");
+        return false;
+      }
+      if(email =="" ){
+        alert("Forms Fields(email) are missing. Plase enter valid details");
+        return false;
+      }
+       if(address =="" ){
+        alert("Forms Fields(address) are missing. Plase enter valid details");
+        return false;
+      }
+       if(phone=="" ){
+        alert("Forms Fields(phone) are missing. Plase enter valid details");
+        return false;
+      }
+      
+      
+      alert("Your form is validated and details submitted successfully :)");
+    }
+  </script>
+</body>
+</html>

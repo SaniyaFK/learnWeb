@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Change background Color</title>
+</head>
+<style>
+  body{
+    padding: 50px;
+    text-align: center;
+    transition: background-color 1s ease;
+  } 
+
+  h1{
+    margin-bottom: 20px;
+    color: rgb(19, 5, 49);
+  }
+  
+  .button{
+    background-color: rgb(48, 184, 247);
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 12px;
+  }
+</style>
+<body>
+  <h1>Welcome to colorful world</h1>
+  <button class="button" onclick="colorChange()">Change Color</button>
+ <script>
+  const colors = ["#0d0d43b5", "#4b0082", "#e8ce80", "#008000", "#ffff00", "#ffa500", "#ff0000"];
+  let index = 0;
+  function colorChange(){
+    document.body.style.backgroundColor= colors[index];
+    index++;
+    if(index>=colors.length){
+      index = 0;
+    }
+    setTimeout(colorChange, 1000);
+
+  }
+ </script>
+</body>
+</html>
