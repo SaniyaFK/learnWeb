@@ -4,4 +4,4 @@ This is my new Git repository where we are learning basic programming like java,
 Author : Saniya Kabadi
 
 # Info
-To learn i=editing the readme file in VS code after configuring
+To learn editing the readme file in VS code after configuring
